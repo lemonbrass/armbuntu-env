@@ -20,4 +20,6 @@ tar -xf tools/lldlibs.tar.xz
 cp ./usr / -r
 
 echo "Done!"
-echo "Now:    source .bashrc"
+echo "Now:"
+echo "    source .bashrc"
+echo "    and possibly remove the usr folder (not removed for safety reasons)"
