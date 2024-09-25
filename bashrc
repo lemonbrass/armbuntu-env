@@ -74,8 +74,8 @@ eval $(ssh-agent -s)
 export PATH="$PATH:~/.bin/"
 
 
-alias ls=l
-alias cd=c
+alias l=ls
+alias c=cd
 alias g=git
 alias cum="git commit -a"
 alias push="git push"
@@ -84,5 +84,5 @@ alias b="cd .."
 alias c3r="c3c compile-run ."
 alias c3b="c3c compile ."
 alias e=clear
-export PATH=\$PATH:/usr/local/go/bin"
+export PATH="$PATH:/usr/local/go/bin"
 export GOROOT="/usr/local/go"
