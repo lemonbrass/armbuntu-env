@@ -18,6 +18,8 @@ tar -xf tools/c3c.tar.xz
 tar -xf tools/lldlibs.tar.xz
 
 cp ./usr / -r
+cp tools/c3lsp /usr/bin/
+mkdir -p ~/.bin
 
 echo "Done!"
 echo "Now:"
