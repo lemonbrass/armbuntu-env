@@ -7,16 +7,14 @@ if [ -n "$force_color_prompt" ]; then
 	# a case would tend to support setf rather than setaf.)
 	color_prompt=yes
     else
-	color_prompt=
+	color_prompt=no
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
+# PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]$ '
+PS1='${debian_chroot:+($debian_chroot)}\]\033[01;32m\]\u@\h:\]\033[01;34m\]\W\]\033[00m\]\$ '
+
+# not colored: PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -27,7 +25,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
@@ -43,7 +40,6 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
 
 [ -z "$PS1" ] && return
 HISTCONTROL=ignoredups:ignorespace
@@ -85,4 +81,3 @@ alias c3r="c3c compile-run ."
 alias c3b="c3c compile ."
 alias e=clear
 export PATH="$PATH:/usr/local/go/bin"
-export GOROOT="/usr/local/go"
