@@ -65,7 +65,7 @@ esac
 #fi
 
 export TERM=xterm-256color
-eval $(ssh-agent -s)
+eval $(ssh-agent -s > /dev/null)
 
 export PATH="$PATH:~/.bin/"
 
